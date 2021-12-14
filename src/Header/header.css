@@ -1,0 +1,13 @@
+.header_bg{
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    height: 40vmin;
+    width: 100%;
+}
+#Bg_L{
+    background-image: url('../images/bg-desktop-light.jpg');
+}
+#Bg_D{
+    background-image: url('../images/bg-desktop-dark.jpg');
+}
