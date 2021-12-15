@@ -1,6 +1,8 @@
 import Todo from '../Todo/Todo'
 import "./todocontainer.css"
-function TodoContainer({isDark ,toggleTheme,newItems,setNewItems,HandleSubmit}) {
+function TodoContainer({setActive,active,items,HandleCheck,HandleDelete,isDark ,
+    toggleTheme,newItems,setNewItems,setItem,
+    HandleSubmit}) {
     return (
         <section className="container">
             <Todo isDark={isDark}
@@ -8,6 +10,12 @@ function TodoContainer({isDark ,toggleTheme,newItems,setNewItems,HandleSubmit}) 
                 newItems={newItems}
                 setNewItems={setNewItems}
                 HandleSubmit={HandleSubmit}
+                HandleCheck={HandleCheck}
+                HandleDelete={HandleDelete}
+                items={items}
+                setActive={setActive}
+                active={active}
+                setItem={setItem}
             />
         </section>
     )

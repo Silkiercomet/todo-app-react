@@ -1,6 +1,8 @@
 import Brand from './Brand'
 import AddItem from './AddItem'
-function Todo({isDark, toggleTheme,newItems,setNewItems,HandleSubmit}) {
+import ItemList from './ItemsList'
+function Todo({setActive,active,items,isDark, toggleTheme,newItems,setNewItems,HandleSubmit,
+    HandleCheck,HandleDelete,setItem}) {
     return (
         <main>
             <Brand isDark={isDark} toggleTheme={toggleTheme}/>
@@ -8,7 +10,20 @@ function Todo({isDark, toggleTheme,newItems,setNewItems,HandleSubmit}) {
                 newItems={newItems}
                 setNewItems={setNewItems}
                 HandleSubmit={HandleSubmit}
+                isDark={isDark}
             />
+            
+            <ItemList 
+            isDark={isDark}
+            HandleCheck={HandleCheck}
+            HandleDelete={HandleDelete}
+            items={items}
+            setActive={setActive}
+            active={active}
+            setItem={setItem}
+            />
+           
+            
         </main>
     )
 }

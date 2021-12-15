@@ -9,15 +9,21 @@ import { ThemeContext } from './Theme/ThemeContext';
 function App() {
 //--------------------Hooks------------------>
 
-  const [items, setItem] = useState("")
+  const [items, setItem] = useState(JSON.parse(localStorage.getItem('shoppinglist')) || [])
   const [{theme, isDark}, toggleTheme] = useContext(ThemeContext)
   const [newItems, setNewItems] = useState("");
+  const [active,setActive] = useState(0);
+
   useEffect(() => {
     localStorage.setItem('shoppinglist', JSON.stringify(items));
   }, [items])
+  useEffect(() => {
+    console.log(active)
+  }, [active])
 //------------------------------------------->
 //-----------------functions----------------->
   const setstorage = (x) => {
+    //x an array with the todo's
     setItem(x);
     localStorage.setItem("shoppinglist", JSON.stringify(x));
   };
@@ -39,8 +45,8 @@ function App() {
     const listItems = items.filter((item) => item.id !== id);
     setstorage(listItems);
   };
-  const HandleSubmit = (e) => {
-    e.preventDefault();
+  const HandleSubmit = () => {
+
     if (!newItems) return;
     //add item
     AddToList(newItems);
@@ -53,13 +59,19 @@ function App() {
 
       <Header isDark={isDark}/>
       <TodoContainer 
+        items={items}
         isDark={isDark} 
         toggleTheme={toggleTheme}
         newItems={newItems}
         setNewItems={setNewItems}
         HandleSubmit={HandleSubmit}
+        HandleCheck={HandleCheck}
+        HandleDelete={HandleDelete}
+        setActive={setActive}
+        active={active}
+        setItem={setItem}
       />
-      <p>its a {isDark ? 'dark theme': 'light theme'}</p>
+
       
     </body>
   );

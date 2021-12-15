@@ -1,7 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap');
+
 .btn{
     background-color: transparent;
     border: none;
     cursor: pointer;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: inherit;
 }
 .brand{
     display: flex;
@@ -12,4 +16,179 @@
     color: hsl(0, 0%, 98%);
     font-size: 2.5rem;
     letter-spacing: 1.1rem
+}
+.Subbtn{
+    height: 22px;
+    width: 22px;
+    cursor: pointer;
+    border-radius: 50%;
+    position: relative;
+
+}
+.addForm{
+    display: flex;
+    align-items: center;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    background-color: hsl(0, 0%, 98%);
+    border-radius: 3px;
+    padding: 0 1rem;
+    box-shadow:
+  0px 2.7px 10px rgba(0, 0, 0, 0.092),
+  0px 25px 80px rgba(0, 0, 0, 0.19)
+;
+
+}
+#B_D{
+    border: 0.1px solid hsl(237, 14%, 26%);
+    background-color: hsl(235, 24%, 19%);
+}
+#B_L{
+    border: 0.1px solid hsl(233, 11%, 84%);
+    background-color: hsl(0, 0%, 98%);
+}
+#addItems::placeholder{
+   font-family: 'Josefin Sans', sans-serif;
+   color: hsl(236, 9%, 61%);
+   font-size: 1.1rem;
+
+}
+#addItems{
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 1.1rem;
+}
+.C_DD{
+    color: hsl(0, 0%, 98%) ;
+}
+.C_LL{
+    color: hsl(235, 24%, 19%);
+}
+#addItems:focus{
+    outline: none;
+}
+#addItems{
+    padding: 1rem ;
+    width: 90%;
+    border: none;
+    background-color: transparent;
+
+}
+#Bg_DD{
+    background-color: hsl(235, 24%, 19%);
+}
+.itemsLIst{
+    max-width: 500px;
+    box-shadow:
+    0px 0.8px 3.6px rgba(0, 0, 0, 0.066),
+    0px 2.7px 10px rgba(0, 0, 0, 0.095),
+    0px 7.3px 24.1px rgba(0, 0, 0, 0.124),
+    0px 25px 80px rgba(0, 0, 0, 0.19)
+  ;  
+  border-radius: 5px;
+}
+.item{
+    width: 100%;
+    padding: 1rem ;
+    display: flex;
+    align-items: center;
+    column-gap: 1rem;
+    font-size: 1.1rem;
+}
+#DBB{border-bottom: 1px solid hsla(233, 14%, 35%, 0.815)}
+#LBB{border-bottom: 1px solid hsl(236, 33%, 92%);}
+
+.delete{
+    cursor: pointer;
+    height: 18px;
+    width: 18px;
+    background-image: url(../images/icon-cross.svg);
+    background-size: cover;
+    background-position: center;
+    border: none;
+    background-color: transparent;
+    margin-left: auto;
+    display: none;
+}
+.text{
+    font-size: 1.1rem;
+}
+.DList{
+    background-color: hsl(235, 24%, 19%);
+    color: hsl(0, 0%, 98%);
+}
+.LList{
+    background-color: hsl(0, 0%, 98%);
+    color: hsl(235, 24%, 19%);
+   
+}
+.checkbox{
+    display: none;
+}
+.checkbox:checked + .checkmark::after{
+    display: flex;
+}
+.checkbox:checked ~ .delete{
+    display: flex;
+}
+.checkmark{
+    border: 0.1px solid var(--LightGrayishBlue);
+    height: 22px;
+    width: 22px;
+    cursor: pointer;
+    border-radius: 50%;
+    position: relative;
+}
+.checkmark::after {
+    content: url(../images/icon-check.svg);
+    background: linear-gradient(130deg, hsl(192, 100%, 67%), hsl(280, 87%, 65%));
+    height: 22px;
+    width: 22px;
+    position: absolute;
+    top: -1px;
+    left: -1px;
+    display: none;
+    margin: auto;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    transition: 300ms ease-in-out;
+}
+
+.itemsLIst ul li:first-child{
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+}
+.itemsLIst ul{
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+}
+footer{
+    font-size: 0.9rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: .8rem;
+    border-bottom-left-radius: 3px;
+    border-bottom-right-radius: 3px;
+    position: relative;
+}
+footer menu{
+    display: flex;
+    column-gap: .5rem;
+}
+@media (max-width:500px){
+    footer menu{
+        position: absolute;
+        bottom: -70px;
+        width: 100%;
+        left: 0;
+        padding:  1rem;
+        justify-content: center;
+        border-radius: 3px;
+        column-gap: 1.5rem;
+        box-shadow:
+        0px 2.7px 10px rgba(0, 0, 0, 0.092),
+        0px 25px 80px rgba(0, 0, 0, 0.19)
+      ;
+    }
 }
